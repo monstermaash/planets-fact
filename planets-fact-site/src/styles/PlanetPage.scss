@@ -1,0 +1,28 @@
+h1 {
+  font-size: 5rem;
+  margin-bottom: 34px;
+  font-weight: 500;
+}
+
+p{
+  font-size: 0.875rem;
+  line-height: 25px;
+  margin-bottom: 24px;
+}
+
+.grid-container {
+  max-width: 1110px;
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  grid-template-areas:
+      "planet-image planet-image"
+      "planet-info planet-info";
+  margin: 4.5rem auto;
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
