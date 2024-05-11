@@ -1,9 +1,5 @@
-/* Import animate.css */
 @import 'animate.css/animate.min.css';
 
-
-// fonts
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Spartan:wght@400;700&display=swap');
 
 html {
@@ -15,7 +11,6 @@ html {
   position: relative;  
 }
 
-/* Keyframes for twinkling animation */
 @keyframes twinkling {
   0% {
     opacity: 1;
@@ -30,7 +25,6 @@ html {
   }
 }
 
-/* Absolute positioning and styling for individual stars */
 .star {
   position: absolute;
   background-color: white;
@@ -39,7 +33,6 @@ html {
   animation: twinkling 10s infinite linear;
 }
 
-/* Define different star sizes */
 .star--large {
   width: 3px;
   height: 3px;
@@ -82,7 +75,6 @@ button {
 }
 
 
-// Import partials or other style files here
 @import 'Navbar';
 @import 'PlanetPage';
 @import 'Footer';

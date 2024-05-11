@@ -1,26 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './styles/TabView.scss';
 import './styles/styles.scss';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
-
-class TabView extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTab: 'overview' // Default active tab is 'overview'
-    };
-  }
-
-  handleTabChange = (tab) => {
-    this.setState({ activeTab: tab });
-  };
-
+class TabView extends Component {
   render() {
-    const { activeTab } = this.state;
-    const { overview, structure, geology } = this.props.planetInfo;
+    const { activeTab, planetInfo, onTabChange } = this.props;
+    const { overview, structure, geology } = planetInfo;
 
     return (
       <div className="tab-view">
@@ -30,7 +17,10 @@ class TabView extends React.Component {
               <p>{overview.content}</p>
               <div className="source">
                 <span>Source: </span>
-                <a href={overview.source} target="_blank" rel="noopener noreferrer">Wikipedia<FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                <a href={overview.source} target="_blank" rel="noopener noreferrer">
+                  Wikipedia
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
               </div>
             </>
           )}
@@ -39,7 +29,10 @@ class TabView extends React.Component {
               <p>{structure.content}</p>
               <div className="source">
                 <span>Source: </span>
-                <a href={structure.source} target="_blank" rel="noopener noreferrer">Wikipedia<FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                <a href={structure.source} target="_blank" rel="noopener noreferrer">
+                  Wikipedia
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
               </div>
             </>
           )}
@@ -48,7 +41,10 @@ class TabView extends React.Component {
               <p>{geology.content}</p>
               <div className="source">
                 <span>Source: </span>
-                <a href={geology.source} target="_blank" rel="noopener noreferrer">Wikipedia<FontAwesomeIcon icon={faArrowUpRightFromSquare} /></a>
+                <a href={geology.source} target="_blank" rel="noopener noreferrer">
+                  Wikipedia
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
               </div>
             </>
           )}
@@ -56,21 +52,21 @@ class TabView extends React.Component {
         <div className="tab-buttons">
           <button
             className={activeTab === 'overview' ? 'active' : ''}
-            onClick={() => this.handleTabChange('overview')}
+            onClick={() => onTabChange('overview', planetInfo.images.planet)}
           >
             <p>01</p>
             Overview
           </button>
           <button
             className={activeTab === 'structure' ? 'active' : ''}
-            onClick={() => this.handleTabChange('structure')}
+            onClick={() => onTabChange('structure', planetInfo.images.internal)}
           >
             <p>02</p>
             Internal Structure
           </button>
           <button
             className={activeTab === 'geology' ? 'active' : ''}
-            onClick={() => this.handleTabChange('geology')}
+            onClick={() => onTabChange('geology', planetInfo.images.geology)}
           >
             <p>03</p>
             Surface Geology
