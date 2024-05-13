@@ -1,11 +1,8 @@
 import React from 'react';
 import planetsData from './data/data.json';
 import './styles/Footer.scss';
-import './styles/styles.scss';
-
 
 const Footer = ({ planetName }) => {
-  // Find the planet info based on the planetName prop
   const planetInfo = planetsData.find((planet) => planet.name === planetName);
 
   if (!planetInfo) {
@@ -14,24 +11,31 @@ const Footer = ({ planetName }) => {
 
   const { rotation, revolution, radius, temperature } = planetInfo;
 
+  const formatStat = (value, unit) => {
+    const numericValue = parseFloat(value.replace(',', ''));
+    const roundedValue = Math.round(numericValue);
+    const formattedValue = roundedValue.toLocaleString();
+    return `${formattedValue} ${unit}`;
+  };
+
   return (
     <div className="footer">
-      <div className='footer-grid-container'>
-        <div className='stats'>
+      <div className="footer-grid-container">
+        <div className="stats">
           <p>Rotation Time</p>
-          <span>{rotation}</span>
+          <span>{formatStat(rotation, 'days')}</span>
         </div>
-        <div className='stats'>
+        <div className="stats">
           <p>Revolution Time</p>
-          <span>{revolution}</span>
+          <span>{formatStat(revolution, 'days')}</span>
         </div>
-        <div className='stats'>
+        <div className="stats">
           <p>Radius</p>
-          <span>{radius}</span>
+          <span>{formatStat(radius, 'km')}</span>
         </div>
-        <div className='stats'>
+        <div className="stats">
           <p>Average Temp.</p>
-          <span>{temperature}</span>
+          <span>{formatStat(temperature, '°C')}</span>
         </div>
       </div>
     </div>
@@ -39,4 +43,3 @@ const Footer = ({ planetName }) => {
 };
 
 export default Footer;
-

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom';
 import Navbar from './Navbar';
 import PlanetPage from './PlanetPage';
 import Footer from './Footer';
-import '@/styles/styles.scss';
+import './styles/styles.scss';
 
 const App = () => {
   const [selectedPlanet, setSelectedPlanet] = useState('Mercury');
@@ -23,11 +23,6 @@ const App = () => {
   );
 };
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+createRoot(document.getElementById('root')).render(<App />);
 
 export default App;

@@ -15,7 +15,7 @@ const Navbar = ({ onSelectPlanet, selectedPlanet }) => {
               <a
                 href="#"
                 onClick={() => onSelectPlanet(planet)}
-                className={planet === selectedPlanet ? 'active' : ''}
+                className={selectedPlanet === planet ? `active-${planet}` : ''}
               >
                 {planet}
               </a>
