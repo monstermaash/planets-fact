@@ -5,63 +5,57 @@ import './styles/Footer.scss';
 
 const Footer = ({ planetName }) => {
   const planetInfo = planetsData.find((planet) => planet.name === planetName);
-  const statsRefs = {
-    rotation: useRef(null),
-    revolution: useRef(null),
-    radius: useRef(null),
-    temperature: useRef(null)
-  };
+
+  // Refs for each stat element
+  const rotationRef = useRef(null);
+  const revolutionRef = useRef(null);
+  const radiusRef = useRef(null);
+  const temperatureRef = useRef(null);
 
   useEffect(() => {
-    const animateStats = () => {
-      Object.entries(statsRefs).forEach(([statKey, ref]) => {
-        const target = ref.current;
-        if (target) {
-          const value = target.innerHTML;
-          anime({
-            targets: target,
-            innerHTML: [0, value],
-            easing: 'linear',
-            round: 1 // Will round the animated value to 1 decimal
-          });
-        }
-      });
+    const animateStat = (ref, value) => {
+      if (ref.current) {
+        anime({
+          targets: ref.current,
+          innerHTML: [0, value],
+          easing: 'linear',
+          round: 1, // Round the animated value to 1 decimal
+          duration: 1000 // Set animation duration to 1 second
+        });
+      }
     };
 
-    animateStats(); // Trigger the statistics animation when the component mounts or updates
-  }, [planetName]); // Re-run the effect when planetName prop changes
+    // Animate each stat when planetInfo or planetName changes
+    if (planetInfo) {
+      animateStat(rotationRef, planetInfo.rotation);
+      animateStat(revolutionRef, planetInfo.revolution);
+      animateStat(radiusRef, planetInfo.radius);
+      animateStat(temperatureRef, planetInfo.temperature);
+    }
+  }, [planetInfo, planetName]); // Re-run effect when planetInfo or planetName changes
 
   if (!planetInfo) {
     return null;
   }
-
-  const { rotation, revolution, radius, temperature } = planetInfo;
-
-  const formatStat = (value, unit) => {
-    const numericValue = parseFloat(value.replace(',', ''));
-    const roundedValue = Math.round(numericValue);
-    const formattedValue = roundedValue.toLocaleString();
-    return `${formattedValue} ${unit}`;
-  };
 
   return (
     <div className="footer">
       <div className="footer-grid-container">
         <div className="stats">
           <p>Rotation Time</p>
-          <span ref={statsRefs.rotation}>{formatStat(rotation, 'days')}</span>
+          <span ref={rotationRef}>{planetInfo.rotation}</span>
         </div>
         <div className="stats">
           <p>Revolution Time</p>
-          <span ref={statsRefs.revolution}>{formatStat(revolution, 'days')}</span>
+          <span ref={revolutionRef}>{planetInfo.revolution}</span>
         </div>
         <div className="stats">
           <p>Radius</p>
-          <span ref={statsRefs.radius}>{formatStat(radius, 'km')}</span>
+          <span ref={radiusRef}>{planetInfo.radius}</span>
         </div>
         <div className="stats">
           <p>Average Temp.</p>
-          <span ref={statsRefs.temperature}>{formatStat(temperature, '°C')}</span>
+          <span ref={temperatureRef}>{planetInfo.temperature}</span>
         </div>
       </div>
     </div>
