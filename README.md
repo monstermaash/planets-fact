@@ -18,7 +18,7 @@
 
 ### Intro
 
-Hello! This is my solution to [Planets fact site - Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). This is my second project build with **_React JS_**. This time I had the opportunity to try _styled-components_. It is a very powerful tool, but I believe it takes time to learn good practices and organize the code. Right now, I have the feeling that my styles are chaotic but I'm looking forward to correct it and use styled-components to its full potential.
+Hello! This is my solution to the [Planets fact site challenge](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f) by Frontend Mentor. This project was built using **React JS** and leverages the power of **styled-components** for styling. While working on this project, I explored and learned more about using styled-components efficiently to manage CSS within React components.
 
 ### The challenge
 
@@ -36,7 +36,7 @@ Hello! This is my solution to [Planets fact site - Frontend Mentor](https://www.
 
 ### Links
 
-<!-- - [LIVE PREVIEW](https://planets-tediko.netlify.app/) to check my solution. -->
+- [LIVE PREVIEW](https://planets-fact.andyvo.dev//) to check my solution.
 
 - [Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
 
@@ -45,48 +45,46 @@ Hello! This is my solution to [Planets fact site - Frontend Mentor](https://www.
 ### Built with
 
 - ReactJS
-- Styled-components
-- Semantic HTML5 markup
+- Anime.js
+- SASS/SCSS
 - JavaScript
-- Flexbox
-- Grid
+- CSS Grid
 
 ### Features
 
-- I used **_ReactJS_** library to create an app. React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
-- I tried to write a project using **_styled-components_** library. Styled Components are one of the new ways to use CSS in modern JavaScript. It is the meant to be a successor of CSS Modules, a way to write CSS that's scoped to a single component, and not leak to any other element in the page. Also allows you to write plain CSS in your components without worrying about class name collisions.
-- The first time I used **_Prettier_**. Prettier is an opinionated code formatter. It removes all original styling and ensures that all outputted code conforms to a consistent style.
-<!-- - To animate the pages transitions and mobile-menu animations I used **_Framer Motion API_**. Framer Motion is an open source, production-ready library that's designed for creating creative animations.
-- Added `counter()` function for my _pseudo-elements_ content in _Tab button_. **CSS counters** let you adjust the appearance of content based on its location in a document. For example, you can use counters to automatically number the headings in a webpage.
-- The **_solar system_** was recreated from this great [Codepen](https://codepen.io/kowlor/pen/ZYYQoy) created by _Malik Dellidj_. It's all based on div rotation with _pseudo-elements_ inside that contains the images of the planets.
-- Implemented **_defer_** to my script tag. The defer attribute tells the browser not to wait for the script. Instead, the browser will continue to process the HTML, build DOM. The script is fetched asynchronously, and it’s executed only after the HTML parsing is done.
-- Implemented `prefers-reduced-motion` CSS media feature which is used to detect if the user has requested that the system minimize the amount of non-essential motion it uses. Prevent animations in brief.
-- `:focus-visible` pseudo class. This selector only indicate focus when it is helpful to the user - such as in cases where the user interacts with the page via a keyboard or some other non-pointing device. It isn't supported by Safari yet, but there is simple [workaround](https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press).
-- Tried to create more accessible mobile navigation. Used the `aria-expanded` and `aria-controls` attributes.
-- To create this project I used webpack. More specifically i used `laravel mix` which is a wrapper for webpack and targets the 80% usecase. -->
+- Developed using ReactJS to create a modular and maintainable application structure.
+- Leveraged styled-components to encapsulate CSS within individual components, providing a more manageable styling approach.
+- Incorporated Anime.js for animations to enhance the user interface and provide engaging interactions.
+- Utilized SASS/SCSS for enhanced styling capabilities and modularity.
 
 ## Setup
 
-To run this project, clone it and install it locally using npm + vite:
+To run this project locally, follow these steps on bash:
 
 ```
-$ git clone git@github.com:monstermaash/planets-fact.git
-$ cd planets-fact-site (twice)
-$ npm install vite --save-dev
+   git clone git@github.com:monstermaash/planets-fact.git
+   cd planets-fact
 ```
 
-Use npm to start the development environment:
+Install dependencies:
 
 ```
-$ npm run dev
+npm install
+```
+
+Start the development server:
+
+```
+npm run dev
 ```
 
 ## Useful resources
 
 - [DOCS - ReactJS](https://reactjs.org/)
 - [VIDEO - ReactJS tutorial by The Net Ninja](https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)
+- [DOCS - Anime.js](https://animejs.com/documentation//)
 - [LINK - Styled-components](https://styled-components.com/)
+- [DOCS - SASS](https://sass-lang.com/documentation/)
+- [DOCS - Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/)
+- [DOCS - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/)
 - [LINK - Prettier](https://prettier.io/)
-- [VIDEO - CSS Counters](https://youtu.be/0gayskscLY4?t=355)
-- [DOCS - CSS Counters](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters)
-- [LINK - async/defer](https://flaviocopes.com/javascript-async-defer/#the-position-matters)
