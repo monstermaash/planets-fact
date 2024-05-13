@@ -62,8 +62,8 @@ Hello! This is my solution to the [Planets fact site challenge](https://www.fron
 To run this project locally, follow these steps on bash:
 
 ```
-   git clone git@github.com:monstermaash/planets-fact.git
-   cd planets-fact
+git clone git@github.com:monstermaash/planets-fact.git
+cd planets-fact
 ```
 
 Install dependencies:
