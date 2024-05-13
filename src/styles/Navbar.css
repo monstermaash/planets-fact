@@ -1,0 +1,142 @@
+.navbar {
+  background-color: transparent;
+  border-bottom: 1px solid hsl(240, 17%, 26%);
+  padding: 0 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.navbar .container {
+  max-width: 1440px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .container h3 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.navbar .container ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.navbar .container ul li {
+  margin: 0 20px;
+  position: relative;
+}
+.navbar .container ul li a {
+  color: hsla(0, 0%, 100%, 0.75);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar .container ul li a.active-Mercury {
+  color: #fff;
+}
+.navbar .container ul li a.active-Mercury:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #def4fc;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Venus {
+  color: #fff;
+}
+.navbar .container ul li a.active-Venus:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #f7cc7f;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Earth {
+  color: #fff;
+}
+.navbar .container ul li a.active-Earth:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #545bfe;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Mars {
+  color: #fff;
+}
+.navbar .container ul li a.active-Mars:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #ff6a45;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Jupiter {
+  color: #fff;
+}
+.navbar .container ul li a.active-Jupiter:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #ecad7a;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Saturn {
+  color: #fff;
+}
+.navbar .container ul li a.active-Saturn:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #fccb6b;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Uranus {
+  color: #fff;
+}
+.navbar .container ul li a.active-Uranus:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #65f0d5;
+  z-index: 1;
+}
+.navbar .container ul li a.active-Neptune {
+  color: #fff;
+}
+.navbar .container ul li a.active-Neptune:before {
+  content: "";
+  position: absolute;
+  top: -41px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #497efa;
+  z-index: 1;
+}/*# sourceMappingURL=Navbar.css.map */

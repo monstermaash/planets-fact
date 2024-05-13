@@ -8,11 +8,10 @@ button {
   gap: 30px;
   align-items: center;
   color: hsla(0, 0%, 100%, 0.75);
-
-  &:hover {
-    background-color: hsl(240, 17%, 26%);
-    color: #fff;
-  }
+}
+button:hover {
+  background-color: hsl(240, 17%, 26%);
+  color: #fff;
 }
 
 button p {
@@ -62,4 +61,4 @@ button p {
 button.active {
   color: white;
   opacity: 1;
-}
+}/*# sourceMappingURL=TabView.css.map */
