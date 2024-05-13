@@ -1,66 +1,87 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import anime from 'animejs';
 import planetsData from './data/data.json';
 import TabView from './TabView';
+
 import './styles/PlanetPage.scss';
-import './styles/styles.scss';
 
-class PlanetPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeTab: 'overview', 
-      planetInfo: null,
-      planetImage: null
+const PlanetPage = ({ planetName }) => {
+  const titleRef = useRef(null);
+  const imageRef = useRef(null);
+  const [activeTab, setActiveTab] = useState('overview');
+  const [planetInfo, setPlanetInfo] = useState(null);
+  const [planetImage, setPlanetImage] = useState(null);
+
+  useEffect(() => {
+    const loadPlanetInfo = () => {
+      const planetInfoData = planetsData.find((planet) => planet.name.toLowerCase() === planetName.toLowerCase());
+      if (planetInfoData) {
+        const planetImageSrc = planetInfoData.images.planet;
+        setPlanetInfo(planetInfoData);
+        setPlanetImage(planetImageSrc);
+        setActiveTab('overview');
+      } else {
+        setPlanetInfo(null);
+        setPlanetImage(null);
+      }
     };
-  }
 
-  componentDidMount() {
-    this.loadPlanetInfo(this.props.planetName);
-  }
+    loadPlanetInfo();
+  }, [planetName]);
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.planetName !== this.props.planetName) {
-      this.loadPlanetInfo(this.props.planetName);
+  useEffect(() => {
+    if (titleRef.current) {
+      const titleElement = titleRef.current;
+      titleElement.innerHTML = planetName.split('').map((letter) => {
+        return `<span class="animLetter">${letter}</span>`;
+      }).join('');
+      anime.timeline().add({
+        targets: '.animLetter',
+        translateY: ['-1em', 0],
+        opacity: [0, 1],
+        duration: 1000,
+        delay: (el, i) => 50 * i,
+        easing: 'easeOutExpo'
+      });
     }
-  }
 
-  loadPlanetInfo = (planetName) => {
-    const planetInfo = planetsData.find((planet) => planet.name === planetName);
-    if (planetInfo) {
-      const planetImage = planetInfo.images.planet;
-      this.setState({ planetInfo, planetImage, activeTab: 'overview' });
-    } else {
-      this.setState({ planetInfo: null, planetImage: null });
+    if (imageRef.current) {
+      anime({
+        targets: imageRef.current,
+        translateX: [-200, 0],
+        translateY: [-200, 0],
+        scale: [4, 1],
+        opacity: [0, 1],
+        duration: 1000,
+        easing: 'easeOutElastic(1, .8)',
+      });
     }
+  }, [planetName]);
+
+  const handleTabChange = (tab, imageUrl) => {
+    setActiveTab(tab);
+    setPlanetImage(imageUrl);
   };
 
-  handleTabChange = (tab, imageUrl) => {
-    this.setState({ activeTab: tab, planetImage: imageUrl });
-  };
-
-  render() {
-    const { planetInfo, planetImage, activeTab } = this.state;
-
-    if (!planetInfo) {
-      return <div>Planet not found!</div>;
-    }
-
-    return (
+  return (
+    <div className="planet-page">
       <div className="grid-container">
         <div className="image-section">
-          <img src={planetImage} alt={planetInfo.name} />
+          <img ref={imageRef} src={planetImage} alt={planetInfo?.name} />
         </div>
         <div className="info-section">
-          <h1>{planetInfo.name}</h1>
+          <h1 className="planet__title" ref={titleRef}>
+            {planetName}
+          </h1>
           <TabView
             planetInfo={planetInfo}
             activeTab={activeTab}
-            onTabChange={this.handleTabChange}
+            onTabChange={handleTabChange}
           />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default PlanetPage;
