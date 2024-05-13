@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import planetsData from './data/data.json';
-import anime from 'animejs'; // Import animejs for animations
+import anime from 'animejs';
 import './styles/Footer.scss';
 
 const Footer = ({ planetName }) => {
   const planetInfo = planetsData.find((planet) => planet.name === planetName);
 
-  // Refs for each stat element
   const rotationRef = useRef(null);
   const revolutionRef = useRef(null);
   const radiusRef = useRef(null);
@@ -19,20 +18,19 @@ const Footer = ({ planetName }) => {
           targets: ref.current,
           innerHTML: [0, value],
           easing: 'linear',
-          round: 1, // Round the animated value to 1 decimal
-          duration: 1000 // Set animation duration to 1 second
+          round: 1,
+          duration: 1000
         });
       }
     };
 
-    // Animate each stat when planetInfo or planetName changes
     if (planetInfo) {
       animateStat(rotationRef, planetInfo.rotation);
       animateStat(revolutionRef, planetInfo.revolution);
       animateStat(radiusRef, planetInfo.radius);
       animateStat(temperatureRef, planetInfo.temperature);
     }
-  }, [planetInfo, planetName]); // Re-run effect when planetInfo or planetName changes
+  }, [planetInfo, planetName]);
 
   if (!planetInfo) {
     return null;

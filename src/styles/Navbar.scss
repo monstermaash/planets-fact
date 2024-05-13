@@ -37,7 +37,6 @@
           position: relative;
           transition: color 0.3s ease;
 
-          // Define hover and active styles using a map of planet colors
           $planetColors: (
             Mercury: #def4fc,
             Venus: #f7cc7f,
@@ -49,7 +48,6 @@
             Neptune: #497efa
           );
 
-        // Generate styles for each planet using map values
         @each $planet, $color in $planetColors {
           &.active-#{$planet} {
             color: #fff;

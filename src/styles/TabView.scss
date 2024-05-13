@@ -13,7 +13,7 @@ button {
 
 button p {
   margin: auto 0;
-  color: hsl(240, 6%, 54%);
+  color: hsla(0, 0%, 100%, 0.75)
 }
 
 button:hover {
@@ -59,8 +59,7 @@ button:hover {
   height: 12px;
 }
 
-/* Active state for tab buttons */
 button.active {
-  background-color: #6d2ed5;
   color: white;
+  opacity: 1;
 }

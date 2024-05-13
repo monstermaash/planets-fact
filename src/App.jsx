@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom';
 import Navbar from './Navbar';
 import PlanetPage from './PlanetPage';
 import Footer from './Footer';
-import '@/styles/styles.scss';
+import './styles/styles.scss';
 
 const App = () => {
   const [selectedPlanet, setSelectedPlanet] = useState('Mercury');

@@ -26,3 +26,17 @@ p{
   align-items: center;
 }
 
+.planet__title {
+  position: relative;
+}
+
+.planet__title .animText-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.planet__title .animLetters {
+  transform-origin: 0 100%;
+  display: inline-block;
+}
