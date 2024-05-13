@@ -2,18 +2,47 @@ import React, { Component } from 'react';
 import './styles/TabView.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import anime from 'animejs';
 
 class TabView extends Component {
+  constructor(props) {
+    super(props);
+    this.tabContentRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.animateTabContent();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.planetInfo !== this.props.planetInfo) {
+      this.animateTabContent();
+    }
+  }
+
+  animateTabContent = () => {
+    const tabContentElement = this.tabContentRef.current;
+    if (tabContentElement) {
+      anime({
+        targets: tabContentElement.children,
+        translateY: ['-1em', 0],
+        opacity: [0, 1],
+        duration: 1000,
+        delay: (el, i) => 50 * i,
+        easing: 'easeOutExpo'
+      });
+    }
+  };
+
   render() {
     const { activeTab, planetInfo, onTabChange } = this.props;
 
     if (!planetInfo) {
-      return null; // If planetInfo is not available, render nothing
+      return null;
     }
 
     const { overview, structure, geology } = planetInfo;
 
-    // Determine planet color based on the selected planet
     const planetColors = {
       Mercury: '#b1d5e2',
       Venus: '#f7cc7f',
@@ -31,14 +60,13 @@ class TabView extends Component {
 
       return {
         backgroundColor: isActive ? planetColor : 'transparent',
-        color: '#FFFFFFBF', 
+        color: '#FFFFFFBF'
       };
     };
 
     return (
       <div className="tab-view">
-        <div className="tab-content">
-          {/* Render tab content based on the active tab */}
+        <div className="tab-content" ref={this.tabContentRef}>
           {activeTab === 'overview' && (
             <>
               <p>{overview?.content}</p>
@@ -77,7 +105,6 @@ class TabView extends Component {
           )}
         </div>
         <div className="tab-buttons">
-          {/* Render tab buttons with dynamic background color */}
           <button
             className={activeTab === 'overview' ? 'active' : ''}
             style={getButtonStyle('overview')}
