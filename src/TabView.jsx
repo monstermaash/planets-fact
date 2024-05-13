@@ -28,7 +28,7 @@ class TabView extends Component {
         translateY: ['-1em', 0],
         opacity: [0, 1],
         duration: 1000,
-        delay: (el, i) => 50 * i,
+        delay: (el, i) => 250 * i,
         easing: 'easeOutExpo'
       });
     }
