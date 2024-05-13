@@ -39,7 +39,7 @@ const PlanetPage = ({ planetName }) => {
         targets: '.animLetter',
         translateY: ['-1em', 0],
         opacity: [0, 1],
-        duration: 1000,
+        duration: 3000,
         delay: (el, i) => 50 * i,
         easing: 'easeOutExpo'
       });
