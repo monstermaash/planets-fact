@@ -55,12 +55,16 @@
             &:before {
               content: '';
               position: absolute;
-              top: -41px;
               left: 0;
+              top: -41px;
               width: 100%;
               height: 5px;
               background-color: $color;
-              z-index: 1;
+              z-index: 1;   
+
+              @media (max-width: 1339px) {
+                top: 15px; 
+              }
             }
           }
         }
@@ -68,4 +72,41 @@
     }
   }
 }
+}
+
+
+@media (max-width: 1199px) {
+  .navbar {
+    padding: 0 20px;
+    justify-content: center;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      ul {
+        padding: 0 0 20px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0 10px;
+    justify-content: center;
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }

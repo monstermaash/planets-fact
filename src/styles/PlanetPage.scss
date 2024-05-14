@@ -40,3 +40,117 @@ p{
   transform-origin: 0 100%;
   display: inline-block;
 }
+
+
+
+@media (max-width: 1440px) {
+  body {
+    padding: 0 10rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "planet-image"
+      "planet-info";
+    margin: 4.5rem auto;
+  }
+
+  .image-section {
+    grid-area: planet-image;
+    order: 2;
+  }
+
+  .info-section {
+    grid-area: planet-info;
+  }
+
+  .planet-page {
+    display: flex;
+    flex-direction: column; // Stack sections vertically on smaller screens
+    align-items: center; // Center align content on smaller screens
+
+    .tab-buttons {
+      transform: translateY(-50px);
+    }
+  }
+
+  .tab-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 70px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 0 3rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.6875rem;
+    line-height: 25px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "planet-image"
+      "planet-info";
+    margin: 4.5rem auto;
+  }
+
+  .image-section {
+    grid-area: planet-image;
+    order: 2;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .info-section {
+    grid-area: planet-info;
+  }
+
+  .planet-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+
+    .tab-buttons {
+      transform: translateY(-50px);
+    }
+  }
+
+  .tab-view {
+    display: grid;
+    grid-template-columns: none;
+    // gap: 8rem;
+  }
+}
+
+
+// @media (max-width: 900px) {
+//   body {
+//     padding: 0 3rem;
+//   }
+//   .tab-view {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     justify-content: space-between;
+//     // gap: 8rem;
+//   }
+// }

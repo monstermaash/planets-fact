@@ -50,6 +50,10 @@ Hello! This is my solution to the [Planets fact site challenge](https://www.fron
 - JavaScript
 - CSS Grid
 
+### What I Learned
+
+This project was a super cool learning experience for me! It was my first time diving into ReactJS for building dynamic user interfaces, and I had a blast exploring all the possibilities it offers. Anime.js was totally new to me too—I got to add some awesome animations to my project using timelines and easing functions. Plus, styled-components was a game-changer for managing styles right inside my React components, which made everything feel more organized and modern. I loved working with these technologies and can't wait to use them more in future projects
+
 ### Features
 
 - Developed using ReactJS to create a modular and maintainable application structure.
@@ -62,8 +66,8 @@ Hello! This is my solution to the [Planets fact site challenge](https://www.fron
 To run this project locally, follow these steps on bash:
 
 ```
-   git clone git@github.com:monstermaash/planets-fact.git
-   cd planets-fact
+git clone git@github.com:monstermaash/planets-fact.git
+cd planets-fact
 ```
 
 Install dependencies:

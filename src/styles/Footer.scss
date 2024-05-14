@@ -31,3 +31,45 @@
   letter-spacing: -0.09375rem;
   text-transform: uppercase;
 }
+
+
+
+/* Tablet view (1440px and below) */
+@media (max-width: 1440px) {
+  .stats p {
+    font-size: 0.5rem;
+  }
+  .stats span {
+    font-size: calc((27.087vw - 2.5rem) / 7);
+  }
+}
+
+/* Tablet view (1200px and below) */
+@media (max-width: 1200px) {
+  .stats {
+    padding: 15px 0 15px 15px;
+  }
+
+  .footer-grid-container {
+    gap: 15px;
+  }
+}
+
+/* Mobile view (900px and below) */
+@media (max-width: 900px) {
+  .stats {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .stats p {
+      margin: auto 0;
+    }
+    .stats span {
+      font-size: 20px;
+      letter-spacing: -0.05;
+    }  
+  .footer-grid-container {
+    grid-template-columns: 1fr;
+  }
+}

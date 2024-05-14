@@ -63,3 +63,26 @@ button.active {
   color: white;
   opacity: 1;
 }
+
+
+
+
+@media (max-width: 1440px) {
+  .source span, 
+  .source a,
+  button {
+    font-size: 0.6875rem;
+  }
+  
+}
+
+@media (max-width: 900px) {
+  .source span,
+  .source a {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+  }
+
+}
