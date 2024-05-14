@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import anime from 'animejs';
 import './styles/TabView.scss';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import anime from 'animejs';
+
 
 class TabView extends Component {
   constructor(props) {
