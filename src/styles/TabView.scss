@@ -9,21 +9,101 @@ button {
   align-items: center;
   color: hsla(0, 0%, 100%, 0.75);
 
+  @media screen and (max-width: 900px) {
+    font-size: 0.5625rem;
+    line-height: 0.625rem;
+  }
+
   &:hover {
     background-color: hsl(240, 17%, 26%);
     color: #fff;
   }
 }
 
+button.active {
+  color: white;
+  opacity: 1;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--active-color);
+  }
+}
+
 button p {
   margin: auto 0;
   color: hsla(0, 0%, 100%, 0.75);
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+button span {
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .tab-buttons {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 20px;
+
+  @media (max-width: 900px) {
+    position: absolute;
+    top: calc(0% + 10px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+    background-color: transparent;
+    padding: 20px 0;
+    margin-right: 3rem;
+    z-index: 50;
+    width: 100%;
+    border-bottom: 1px solid hsl(240, 17%, 26%);
+  }
+}
+
+.tab-buttons button {
+  padding: 12px 30px;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid hsl(240, 17%, 26%);
+  color: hsla(0, 0%, 100%, 0.75);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: hsl(240, 17%, 26%);
+    color: #fff;
+  }
+
+  @media (max-width: 900px) {
+    padding: 0;
+    border: none;
+  }
+}
+
+.tab-buttons button.active {
+  color: white;
+  opacity: 1;
+
+  @media (max-width: 900px) {
+    background-color: transparent;
+  }
 }
 
 .tab-content {
@@ -65,8 +145,6 @@ button.active {
 }
 
 
-
-
 @media (max-width: 1440px) {
   .source span, 
   .source a,
@@ -81,7 +159,6 @@ button.active {
   .source a {
     position: absolute;
     left: 50%;
-    top: 50%; 
     transform: translate(-50%, -50%);
   }
 

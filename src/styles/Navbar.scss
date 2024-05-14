@@ -106,7 +106,7 @@
               background-color: $color;
               z-index: 1;   
 
-              @media (max-width: 1339px) {
+              @media (max-width: 1199px) {
                 top: 15px; 
               }
             }
@@ -158,7 +158,7 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 87px;
         left: 0;
         right: 0;
         background-color: #070722;

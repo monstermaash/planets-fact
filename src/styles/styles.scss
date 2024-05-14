@@ -59,6 +59,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow-y: auto;
+  position: relative;
 }
 
 
@@ -80,14 +81,10 @@ button {
 }
 
 
-
-
-/* Tablet view (900px and below) */
 @media (min-width: 900px) {
 
 }
 
-/* Mobile view (375px and below) */
 @media (min-width: 375px) {
   html {
     width: 100%;

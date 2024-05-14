@@ -57,14 +57,17 @@ class TabView extends Component {
     };
 
     const getButtonStyle = (tabName) => {
-      const isActive = activeTab === tabName;
-      const planetColor = planetColors[planetInfo.name] || '#FFFFFF';
+    const isActive = activeTab === tabName;
+    const planetColor = planetColors[planetInfo.name] || '#FFFFFF';
+    const activePlanetColor = planetColors[tabName] || '#FFFFFF'; 
 
-      return {
-        backgroundColor: isActive ? planetColor : 'transparent',
+    document.documentElement.style.setProperty('--active-color', isActive ? activePlanetColor : planetColor);
+
+    return {
+        backgroundColor: isActive && window.innerWidth > 900 ? planetColor : 'transparent',
         color: '#FFFFFFBF'
       };
-    };
+  };
 
     return (
       <div className="tab-view">
@@ -121,7 +124,7 @@ class TabView extends Component {
             onClick={() => onTabChange('structure', planetInfo.images.internal)}
           >
             <p>02</p>
-            Internal Structure
+            <span>Internal</span> Structure
           </button>
           <button
             className={activeTab === 'geology' ? 'active' : ''}
@@ -129,7 +132,7 @@ class TabView extends Component {
             onClick={() => onTabChange('geology', planetInfo.images.geology)}
           >
             <p>03</p>
-            Surface Geology
+            Surface <span>Geology</span>
           </button>
         </div>
       </div>
