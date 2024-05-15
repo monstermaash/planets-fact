@@ -4,6 +4,7 @@ import './styles/styles.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({ onSelectPlanet, selectedPlanet }) => {
   const planets = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
@@ -11,6 +12,11 @@ const Navbar = ({ onSelectPlanet, selectedPlanet }) => {
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
+  };
+
+  const handlePlanetSelect = (planet) => {
+    onSelectPlanet(planet);
+    setShowMobileMenu(false);
   };
 
   return (
@@ -25,10 +31,11 @@ const Navbar = ({ onSelectPlanet, selectedPlanet }) => {
             <li key={planet}>
               <a
                 href="#"
-                onClick={() => onSelectPlanet(planet)}
+                onClick={() => handlePlanetSelect(planet)}
                 className={selectedPlanet === planet ? `active-${planet}` : ''}
               >
                 {planet}
+                <FontAwesomeIcon icon={faChevronRight} className="chevron" />
               </a>
             </li>
           ))}
