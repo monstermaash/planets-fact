@@ -140,7 +140,7 @@ class TabView extends Component {
             onClick={() => onTabChange('structure', planetInfo.images.internal)}
           >
             <p>02</p>
-            <span>Internal</span> Structure
+            <span className='internal'>Internal</span> Structure
           </button>
           <button
             className={activeTab === 'geology' ? 'active' : ''}
@@ -148,7 +148,7 @@ class TabView extends Component {
             onClick={() => onTabChange('geology', planetInfo.images.geology)}
           >
             <p>03</p>
-            Surface <span>Geology</span>
+            Surface <span className='geology'>Geology</span>
           </button>
         </div>
       </div>

@@ -34,7 +34,6 @@
 
 
 
-/* Tablet view (1440px and below) */
 @media (max-width: 1440px) {
   .stats p {
     font-size: 0.5rem;
@@ -44,7 +43,6 @@
   }
 }
 
-/* Tablet view (1200px and below) */
 @media (max-width: 1200px) {
   .stats {
     padding: 15px 0 15px 15px;
@@ -55,7 +53,6 @@
   }
 }
 
-/* Mobile view (900px and below) */
 @media (max-width: 900px) {
   .stats {
       padding: 20px;
