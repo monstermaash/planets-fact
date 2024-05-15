@@ -10,11 +10,26 @@ class TabView extends Component {
   constructor(props) {
     super(props);
     this.tabContentRef = React.createRef();
+    this.state = {
+      windowWidth: window.innerWidth
+    };
   }
 
   componentDidMount() {
     this.animateTabContent();
+    window.addEventListener('resize', () => {
+      this.setState({ windowWidth: window.innerWidth });
+    });
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize = () => {
+    this.setState({ windowWidth: window.innerWidth });
+  };
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.planetInfo !== this.props.planetInfo) {
@@ -38,6 +53,7 @@ class TabView extends Component {
 
   render() {
     const { activeTab, planetInfo, onTabChange } = this.props;
+    const { windowWidth } = this.state;
 
     if (!planetInfo) {
       return null;
@@ -64,7 +80,7 @@ class TabView extends Component {
     document.documentElement.style.setProperty('--active-color', isActive ? activePlanetColor : planetColor);
 
     return {
-        backgroundColor: isActive && window.innerWidth > 900 ? planetColor : 'transparent',
+        backgroundColor: isActive && windowWidth > 900 ? planetColor : 'transparent',
         color: '#FFFFFFBF'
       };
   };
