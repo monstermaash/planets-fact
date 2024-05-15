@@ -28,7 +28,7 @@ button.active {
   &:before {
     content: '';
     position: absolute;
-    bottom: -18px;
+    bottom: -20px;
     left: 0;
     width: 100%;
     height: 3px;
@@ -114,52 +114,69 @@ button span {
 .source {
   display: flex;
   flex-direction: row;
-}
+  justify-content: center;
 
-.source p {
-  margin: 0;
-}
-
-.source span {
-  color: hsl(240, 6%, 54%);
-  font-size: 14px;
-}
-
-.source a {
-  color: hsl(240, 6%, 54%);
-  font-size: 14px;
-  font-weight: 700;
-  margin: auto 5px;
-}
-
-.source svg {
-  margin-left: 5px;
-  color: hsl(240, 6%, 54%);
-  width: 12px;
-  height: 12px;
-}
-
-button.active {
-  color: white;
-  opacity: 1;
-}
-
-
-@media (max-width: 1440px) {
-  .source span, 
-  .source a,
-  button {
-    font-size: 0.6875rem;
-  }
-  
-}
-
-@media (max-width: 900px) {
-  .source span,
-  .source a {
+  @media screen and (max-width: 900px){
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 40%;
+    bottom: 0.5rem;
   }
 
+  @media screen and (max-width: 600px){
+    font-size: 0.6875rem;
+    left: 36%;
+  }
+
+  @media screen and (max-width: 450px){
+    left: 30%;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  span {
+    color: hsl(240, 6%, 54%);
+    font-size: 14px;
+  }
+
+  a {
+    color: hsl(240, 6%, 54%);
+    font-size: 14px;
+    font-weight: 700;
+    margin: auto 5px;
+  }
+
+  svg {
+    margin-left: 5px;
+    color: hsl(240, 6%, 54%);
+    width: 12px;
+    height: 12px;
+  }
 }
+
+
+// button.active {
+//   color: white;
+//   opacity: 1;
+// }
+
+
+// @media (max-width: 1440px) {
+//   .source span, 
+//   .source a,
+//   button {
+//     font-size: 0.6875rem;
+//   }
+  
+// }
+
+// @media (max-width: 900px) {
+//   .source span,
+//   .source a {
+//     position: absolute;
+//     left: 50%;
+//     transform: translate(-50%, 150%);
+//   }
+
+// }
