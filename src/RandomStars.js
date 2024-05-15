@@ -6,8 +6,6 @@ function getRandomNumber(min, max) {
 
 function createStars(numStars) {
   const body = document.body;
-  const existingStars = document.querySelectorAll('.star');
-  existingStars.forEach(star => star.remove());
 
   for (let i = 0; i < numStars; i++) {
     const star = document.createElement('div');
@@ -20,15 +18,10 @@ function createStars(numStars) {
     const y = getRandomNumber(0, window.innerHeight);
     star.style.left = `${x}px`;
     star.style.top = `${y}px`;
+
     body.appendChild(star);
   }
 }
 
-function handleResize() {
-  const numStars = window.innerWidth < 900 ? 100 : 200;
-  createStars(numStars);
-}
-
-handleResize();
-
-window.addEventListener('resize', handleResize);
+// Call createStars function with desired number of stars
+createStars(200); // Generate 200 stars
