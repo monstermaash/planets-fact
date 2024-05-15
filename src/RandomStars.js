@@ -20,7 +20,6 @@ function createStars(numStars) {
     const y = getRandomNumber(0, window.innerHeight);
     star.style.left = `${x}px`;
     star.style.top = `${y}px`;
-
     body.appendChild(star);
   }
 }
