@@ -85,10 +85,8 @@ npm run dev
 ## Useful resources
 
 - [DOCS - ReactJS](https://reactjs.org/)
-- [VIDEO - ReactJS tutorial by The Net Ninja](https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d)
 - [DOCS - Anime.js](https://animejs.com/documentation//)
 - [LINK - Styled-components](https://styled-components.com/)
 - [DOCS - SASS](https://sass-lang.com/documentation/)
 - [DOCS - Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/)
 - [DOCS - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/)
-- [LINK - Prettier](https://prettier.io/)
