@@ -56,103 +56,167 @@
       }
     }
 
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        margin: 0 20px;
-        position: relative;
-
-        @media screen and (max-width: 900px) {
-          width: 100%;
-          border-bottom: 1px solid hsl(240, 17%, 26%);
-          padding: 20px 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        a {
-          color: hsla(0, 0%, 100%, 0.75);
-          text-decoration: none;
-          font-size: 11px;
-          text-transform: uppercase;
-          font-weight: 700;
-          position: relative;
+        .nav-links {
           display: flex;
+          justify-content: center;
           align-items: center;
-          margin-left: 2.5rem;
-          transition: color 0.3s ease;
-
-          @media screen and (min-width: 901px) {
-              margin-left: 0;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+    
+          li {
+            margin: 0 20px;
+            position: relative;
+    
+            @media screen and (max-width: 900px) {
+              width: 100%;
+              border-bottom: 1px solid hsl(240, 17%, 26%);
+              padding: 20px 0;
             }
-
-          &::before {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            z-index: 1;
-
-            @media screen and (min-width: 901px) {
-              display: none;
+    
+            &:last-child {
+              margin-right: 0;
             }
-          }
-
-          .chevron {
-            position: absolute;
-            right: 0;
-
-            @media screen and (min-width: 901px) {
-                display: none;
+    
+            a {
+              color: hsla(0, 0%, 100%, 0.75);
+              text-decoration: none;
+              font-size: 11px;
+              text-transform: uppercase;
+              font-weight: 700;
+              position: relative;
+              transition: color 0.3s ease;
+              display: flex;
+              align-items: center;
+              
+    
+              &::before {
+                content: '';
+                position: absolute;
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 3px;
+                background-color: transparent;
+                z-index: 1; 
               }
+    
+              .chevron {
+                position: absolute;
+                right: 0;
+
+                @media screen and (min-width: 900px) {
+                  display: none;
+                }
+              }
+
+              
+    
+              $planetColors: (
+                Mercury: #def4fc,
+                Venus: #f7cc7f,
+                Earth: #545bfe,
+                Mars: #ff6a45,
+                Jupiter: #ecad7a,
+                Saturn: #fccb6b,
+                Uranus: #65f0d5,
+                Neptune: #497efa
+              );
+    
+            @each $planet, $color in $planetColors {
+              &.active-#{$planet} {
+                color: #fff;
+    
+                &:before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: -37px;
+                  width: 100%;
+                  height: 3px;
+                  background-color: $color;
+                  z-index: 1;
+
+                  @media (max-width: 900px) {
+                      display: none;
+                    }
+
+                  @media (max-width: 1200px) {
+                    top: 31px;
+                  }
+                  
+                }
+              }
+            }
           }
-        }
+    
+          &.active-Mercury a {
+            color: #fff;
+    
+            &:before {
+              background-color: #def4fc;
+            }
+          }
+    
+          &.active-Venus a {
+            color: #fff;
+    
+            &:before {
+              background-color: #f7cc7f;
+            }
+          }
 
-        &:nth-child(1) a::before {
-          background-color: #def4fc;
-        }
+          &.active-Earth a {
+            color: #fff;
+    
+            &:before {
+              background-color: #545bfe;
+            }
+          }
 
-        &:nth-child(2) a::before {
-          background-color: #f7cc7f;
-        }
+          &.active-Mars a {
+            color: #fff;
+    
+            &:before {
+              background-color: #ff6a45;
+            }
+          }
 
-        &:nth-child(3) a::before {
-          background-color: #545bfe;
-        }
+          &.active-Jupiter a {
+            color: #fff;
+    
+            &:before {
+              background-color: #ecad7a;
+            }
+          }
 
-        &:nth-child(4) a::before {
-          background-color: #ff6a45;
-        }
+          &.active-Saturn a {
+            color: #fff;
+    
+            &:before {
+              background-color: #fccb6b;
+            }
+          }
 
-        &:nth-child(5) a::before {
-          background-color: #ecad7a;
-        }
+          &.active-Uranus a {
+            color: #fff;
+    
+            &:before {
+              background-color: #65f0d5;
+            }
+          }
 
-        &:nth-child(6) a::before {
-          background-color: #fccb6b;
+          &.active-Neptune a {
+            color: #fff;
+    
+            &:before {
+              background-color: #497efa;
+            }
+          }
+    
         }
-
-        &:nth-child(7) a::before {
-          background-color: #65f0d5;
         }
-
-        &:nth-child(8) a::before {
-          background-color: #497efa;
-        }
-      }
-    }
 
     .show-nav-links {
       height: 550px;
@@ -219,5 +283,11 @@
         display: flex;
       }
     }
+
+    @media (min-width: 901px) {
+    .show-nav-links {
+      height: auto;
+    }
+  }
   }
 }
