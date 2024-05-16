@@ -67,6 +67,18 @@
           li {
             margin: 0 20px;
             position: relative;
+
+            // &::before {
+            //   content: '';
+            //   position: absolute;
+            //   left: 0;
+            //   top: 0;
+            //   width: 20px;
+            //   height: 20px;
+            //   border-radius: 50%;
+            //   background-color: white;
+            //   z-index: 1;
+            // }
     
             @media screen and (max-width: 900px) {
               width: 100%;
